@@ -71,3 +71,7 @@ Levels are saved in `.game` format, with filenames containing the level metadata
 - `maps/`: Collection of daily and sample custom puzzles in `.game` format.
 - `examples/`: Example scripts showing how to use the engine programmatically.
 - `preprocess/`: Tools for fetching and processing new maps.
+
+## Report
+
+The technical report detailing the design decisions, algorithms, and performance analysis of the solver can be found in `report/experiments.pdf`. 
