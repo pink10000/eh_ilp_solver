@@ -5,7 +5,7 @@ import re
 import time
 import threading
 from .engine import Board, TileType
-from .solver import EncloseSolver
+from .solver import EncloseSolverAlt4
 
 def print_board(board: Board):
     header = "   " + "".join([str(x % 10) for x in range(board.width)])
@@ -68,7 +68,7 @@ def display_solve_results(board: Board, walls: list, budget: int, optimal: int =
 
 def get_solver(board: Board, budget: int, time_limit: int = None, threads: int = None):
     """Centralized factory for solver instantiation."""
-    return EncloseSolver(board, wall_budget=budget, time_limit=time_limit, threads=threads)
+    return EncloseSolverAlt4(board, wall_budget=budget, time_limit=time_limit, threads=threads)
 
 def timer_thread_func(stop_event, start_time, game_id=None, count=None, limit=None, optimal_score=None):
     """Generalized live display for the solver."""

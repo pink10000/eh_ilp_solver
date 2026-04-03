@@ -8,3 +8,5 @@ outputs/
 *.log
 
 *.gz
+
+enclose_engine.egg-info
