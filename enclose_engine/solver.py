@@ -1,7 +1,6 @@
 import pulp as pl
 import os
 from .engine import Board, TileType
-from typing import List, Tuple, Dict
 
 class EncloseSolverAlt4:
     """
@@ -32,11 +31,13 @@ class EncloseSolverAlt4:
         return self.W.get((i, j), 0)
 
     def _get_E(self, i, j): 
-        if (i, j) == (self.hx, self.hy): return 0
+        if (i, j) == (self.hx, self.hy): 
+            return 0
         return self.E.get((i, j), 0)
 
     def _get_R(self, i, j): 
-        if (i, j) == (self.hx, self.hy): return 1
+        if (i, j) == (self.hx, self.hy): 
+            return 1
         return self.R.get((i, j), 0)
 
     def F(self, i: int, j: int) -> int:
@@ -67,7 +68,8 @@ class EncloseSolverAlt4:
         for j in range(self.board.height):
             for i in range(self.board.width):
                 tile = self.board.get_tile(i, j)
-                if tile == TileType.WATER: continue
+                if tile == TileType.WATER: 
+                    continue
                 
                 # Boundary Escapability: A non-wall tile on the boundary is escapable unless it's the horse's starting position
                 if i == 0 or i == self.board.width - 1 or j == 0 or j == self.board.height - 1:
@@ -103,7 +105,8 @@ class EncloseSolverAlt4:
         for j in range(self.board.height):
             for i in range(self.board.width):
                 # Water tiles have no flow variables, are not reachable, or escapable. 
-                if self.board.get_tile(i, j) == TileType.WATER: continue
+                if self.board.get_tile(i, j) == TileType.WATER: 
+                    continue
                 
                 links = self._unique_links(i, j)
                 for ni, nj in links:
@@ -117,7 +120,8 @@ class EncloseSolverAlt4:
         r_sum_others = pl.lpSum(self.R.values())
         for j in range(self.board.height):
             for i in range(self.board.width):
-                if self.board.get_tile(i, j) == TileType.WATER: continue
+                if self.board.get_tile(i, j) == TileType.WATER: 
+                    continue
                 
                 # Get flow in and flow out for the tile
                 links = self._unique_links(i, j)
@@ -178,7 +182,9 @@ class EncloseSolverAlt4:
 
     # Check if any portal in the pair is on the boundary, which would make them escapable regardless of walls
     def _is_portal_pair_on_boundary(self, portal_id):
-        if portal_id not in self.board.portals: return False
+        if portal_id not in self.board.portals: 
+            return False
         for i, j in self.board.portals[portal_id]:
-            if i == 0 or i == self.board.width - 1 or j == 0 or j == self.board.height - 1: return True
+            if i == 0 or i == self.board.width - 1 or j == 0 or j == self.board.height - 1: 
+                return True
         return False

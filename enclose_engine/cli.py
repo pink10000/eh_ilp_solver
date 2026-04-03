@@ -75,10 +75,13 @@ def timer_thread_func(stop_event, start_time, game_id=None, count=None, limit=No
     while not stop_event.is_set():
         elapsed = time.time() - start_time
         parts = []
-        if count and limit: parts.append(f"Solving game {count}/{limit}")
-        if game_id: parts.append(f"ID {game_id}")
+        if count and limit: 
+            parts.append(f"Solving game {count}/{limit}")
+        if game_id: 
+            parts.append(f"ID {game_id}")
         parts.append(f"Elapsed: {elapsed:.1f}s")
-        if optimal_score is not None: parts.append(f"Optimal: {optimal_score}")
+        if optimal_score is not None: 
+            parts.append(f"Optimal: {optimal_score}")
         
         sys.stdout.write(f"\r{' | '.join(parts)} | ")
         sys.stdout.flush()
