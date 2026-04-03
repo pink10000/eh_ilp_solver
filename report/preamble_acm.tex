@@ -1,0 +1,142 @@
+\usepackage{parskip}
+\usepackage[]{mdframed}
+\usepackage{listings}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\usepackage{tcolorbox}
+\usepackage{enumerate}
+\usepackage{xparse, pgffor}
+\usepackage{pgfplots}
+  \pgfplotsset{compat=1.18}
+\usepackage{mathrsfs}
+% \usepackage[backend=biber, style=numeric]{biblatex}
+
+\lstset{frame=tb,
+  language=R,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+% Algorithms (algorithmicx)
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{float} % for [H]
+
+% Algorithm (listings-style)
+\lstnewenvironment{alg}[1][] {   
+  \lstset{ mathescape=true,
+      frame=tB,
+      numbers=left, 
+      numberstyle=\tiny,
+      basicstyle=\rmfamily\scriptsize, 
+      keywordstyle=\color{black}\bfseries,
+      keywords={,procedure, div, for, to, input, output, return, datatype, function, in, if, else, foreach, while, begin, end, }
+      numbers=left,
+      xleftmargin=.04\textwidth,
+      #1
+  }
+}
+{}
+
+% Margins
+\setcounter{secnumdepth}{1} 
+
+% Line Spacing in Tables
+\newcommand{\tablespace}{\\[1.25mm]}
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut
+\newcommand\tstrut{\rule{0pt}{2.0ex}}         % = `top' strut
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}}   % = `bottom' strut
+
+% Sets
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\RQ}{\R\backslash\Q}
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\cA}{\mathcal{A}}
+
+% Statistics
+\newcommand{\var}{\operatorname{Var}}
+\newcommand{\Binom}{\operatorname{Binom}}
+\newcommand{\Bias}{\operatorname{Bias}}
+\newcommand{\Pois}{\operatorname{Pois}}
+\newcommand{\Exp}{\operatorname{Exp}}
+\newcommand{\Gammaf}[1]{\Gamma\left(#1\right)}
+\newcommand{\E}[1]{\mathbb{E}\left[#1\right]}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Cov}{\operatorname{Cov}}
+
+% Linear Algebra
+\newcommand{\norm}[2]{||#1||_{#2}}
+\newcommand{\trace}{\operatorname{trace}}
+
+% Abstract Algebra
+\renewcommand{\ker}{\operatorname{Ker}}
+\newcommand{\kerphi}{\ker\varphi}
+\newcommand{\id}{\operatorname{Id}}
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\newcommand{\module}[1]{$#1-$\text{module}}
+\newcommand{\linear}[1]{$#1-$\text{linear}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\Hom}{\operatorname{Hom}}
+
+% Analysis
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\ovl}[1]{\overline{#1}}
+\newcommand{\unl}[1]{\underline{#1}}
+\newcommand{\vepsi}{\varepsilon}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\vvf}{\textbf{f}}
+
+% Topology
+\newcommand{\Cl}{\operatorname{Cl}}
+
+% Calculus
+\newcommand{\del}{\partial}
+
+% Computer Science
+\newcommand{\arr}{\texttt{[]}}
+\newcommand{\true}{\texttt{True}}
+\newcommand{\false}{\texttt{False}}
+\newcommand{\dpt}{\texttt{dp}} % do not make this \dp, apparently that is used as an internal command in LaTeX and it causes errors when we try to redefine it, so we will just use \dpt instead for our dynamic programming table! insane!
+
+% Misc
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\notexists}{\nexists}
+\newcommand{\im}{\operatorname{im}}
+\renewcommand{\frak}[1]{\mathfrak{#1}}
+\NewDocumentCommand{\quadn}{O{1}}{\foreach \n in {1,...,#1}{\quad} }
+\newcommand{\Proof}{\textbf{Proof: }}
+\newcommand{\hint}{$\mathbf{Hint\!\!:}\;\;$}
+\newcommand{\TODO}[1]{%
+  \begin{tcolorbox}[colback=yellow!20, colframe=red, title=TODO]
+  #1
+  \end{tcolorbox}
+}
+\newcommand{\bmid}{\;\bigg|\;}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+% Syntactic Proofs
+\newenvironment{synproof}
+    {\begin{enumerate}[$t_1: \quad$]} % start enumerate with custom labels
+    {\end{enumerate}}            % end enumerate
+\newcommand{\step}[2]{\item {#1} \hfill \text{#2}}

@@ -1,0 +1,29 @@
+\begin{thebibliography}{1}
+
+\bibitem{chen2021}
+L.~Chen, H.~Zhang, and X.~Liu.
+\newblock On the complexity of optimal grid enclosure.
+\newblock {\em Journal of Computational Geometry}, 12(2):45--67, 2021.
+
+\bibitem{CHEN2016434}
+Wenbin Chen, Nagiza~F. Samatova, Matthias~F. Stallmann, William Hendrix, and Weiqin Ying.
+\newblock On size-constrained minimum s–t cut problems and size-constrained dense subgraph problems.
+\newblock {\em Theoretical Computer Science}, 609:434--442, 2016.
+
+\bibitem{dynomight}
+Dynomight.
+\newblock Integer programming easily encloses horse.
+\newblock \url{https://dynomight.substack.com/p/horse}, 2024.
+\newblock Accessed: 2026-03-14.
+
+\bibitem{ksat2019}
+Thomas~Dueholm Hansen, Haim Kaplan, Or~Zamir, and Uri Zwick.
+\newblock Faster k-sat algorithms using biased-ppsz.
+\newblock In {\em Proceedings of the 51st Annual ACM SIGACT Symposium on Theory of Computing}, page 578–589, 2019.
+
+\bibitem{paturi}
+Ramamohan Paturi, Pavel Pudl\'{a}k, Michael~E. Saks, and Francis Zane.
+\newblock An improved exponential-time algorithm for k-sat.
+\newblock 52(3), 2005.
+
+\end{thebibliography}
