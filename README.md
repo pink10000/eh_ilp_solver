@@ -75,3 +75,7 @@ Levels are saved in `.game` format, with filenames containing the level metadata
 ## Report
 
 The technical report detailing the design decisions, algorithms, and performance analysis of the solver can be found in `report/experiments.pdf`. 
+
+## Acknowledgements
+
+This project was developed as part of the CSE 202 course at UC San Diego. The solver's design was implemented up to March 11, 2026. 
